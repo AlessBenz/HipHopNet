@@ -4,13 +4,13 @@ This repository contains the R analysis for a music collaboration/artist network
 
 ## Repository structure
 - **Data/raw/**: input datasets  
-  - `edges.csv` — edge list  
-  - `nodes.csv` — node metadata
+  - `edges.csv` - edge list  
+  - `nodes.csv` - node metadata
 - **reports/**: analysis report  
-  - `Music_Project.Rmd` — source  
-  - `Music_Project.pdf` — rendered output (if tracked)
+  - `Music_Project.Rmd` - source  
+  - `Music_Project.pdf` - rendered output (if tracked)
 - **gephi/**  
-  - `index.html` — redirect to the interactive visualization
+  - `index.html` - redirect to the interactive visualization
 
 ## How to run (RStudio)
 1. Open `Statistical_Network_Project.Rproj`
