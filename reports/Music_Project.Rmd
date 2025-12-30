@@ -5,8 +5,19 @@ output:
   pdf_document: default
   html_document: default
 ---
-```{r Libraries, message=FALSE}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  dev = "png",
+  dpi = 300,
+  fig.ext = "png",
+  fig.crop = "none"
+)
+```
+
+```{r Libraries, message=FALSE, warning=FALSE}
 # Load libraries
+library(magick)
 library(igraph)
 library(tidyverse)
 library(dplyr)
@@ -38,10 +49,8 @@ It is important to note that collaboration data is only fully available for the 
 # Network Creation
 
 ```{r Load csv, include=FALSE}
-# Load Dataset
-edges <- read.csv("C:/Users/alebe/OneDrive/Documenti/Università/LM/StatisticalNetwork/Statistical_Network_Project/Data/edges.csv") 
-
-nodes <- read.csv("C:/Users/alebe/OneDrive/Documenti/Università/LM/StatisticalNetwork/Statistical_Network_Project/Data/nodes.csv")
+edges <- read.csv("Data/raw/edges.csv", stringsAsFactors = FALSE)
+nodes <- read.csv("Data/raw/nodes.csv", stringsAsFactors = FALSE)
 ```
 
 ```{r Data cleaning and column naming}
@@ -305,7 +314,7 @@ sizes(hhk)
 ```
 # Graph visualiztion
 
-The graph visualisation was created using the Igraph software. It features the ForceAtlas2 layout, an improved force-directed algorithm developed specifically for Gephi. This simulates a physical system in which nodes repel each other like charged particles, and edges attract connected nodes like springs. It is available at this**[link](https://alessbenz.github.io/Gephi-hiphop-viz-network/network/)**
+The graph visualisation was created using the Igraph software. It features the ForceAtlas2 layout, an improved force-directed algorithm developed specifically for Gephi. This simulates a physical system in which nodes repel each other like charged particles, and edges attract connected nodes like springs. It is available at this **[link](https://alessbenz.github.io/Gephi-hiphop-viz-network/network/)**
 
 ```{r}
 # Export to GraphML
